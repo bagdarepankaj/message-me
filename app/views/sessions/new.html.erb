@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<% if current_user %>
+  <h3>User is already logged in </h3>
+<% else %>
+<h1>Login</h1>
+
+<div class="">
+  <%= form_with url: login_path, method: :post do |form| %>
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.email_field :email %>
+    </div>
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+    <div class="field">
+      <%= form.submit 'Submit', format: :html %>
+    </div>
+  <% end %>
+</div>
+<% end %>
