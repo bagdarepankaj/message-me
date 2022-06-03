@@ -4,13 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && (@user.password == params[:password])
-      @_current_user = @user
-      session[:current_user_id] = @_current_user.id
-      redirect_to users_path, notice: 'Successfully logged in'
-    else
-      redirect_to login_path, notice: 'Invalid email or password'
+    @_current_user = User.find_by(email: params[:email])
+    respond_to do |format|
+      if @_current_user && (@_current_user.password == params[:password])
+        session[:current_user_id] = @_current_user.id
+        format.html { redirect_to users_path, notice: 'Successfully logged in'}
+      else
+        format.html { redirect_to login_path, notice: 'Invalid email or password'}
+      end
     end
   end
 
