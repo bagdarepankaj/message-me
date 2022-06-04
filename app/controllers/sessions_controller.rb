@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @_current_user = User.find_by(email: params[:email])
     respond_to do |format|
-      if @_current_user && (@_current_user.password == params[:password])
+      if @_current_user.authenticate(params[:password])
         session[:current_user_id] = @_current_user.id
         format.html { redirect_to users_path, notice: 'Successfully logged in'}
       else

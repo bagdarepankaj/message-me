@@ -15,8 +15,9 @@
             <div class="ui feed">
               <div class="event">
                 <div class="content">
-                  <div class="summary">
-                    <em>Elliot User:</em> text message
+                  <div class="summary" id="messages">
+                    <!-- <em>Elliot User:</em> text message -->
+                    <%= render @messages %>
                   </div>
                 </div>
               </div>
@@ -25,7 +26,7 @@
         </div>
         <div class="extra content">
           <div class="ui action input" style="width: 100%;">
-            <input type="text">
+            <input type="text" data-behavior="chat_room_speaker">
             <button class="ui icon button">
               <i class="chevron circle right icon"></i>
             </button>
