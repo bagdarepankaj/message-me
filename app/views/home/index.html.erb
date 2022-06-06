@@ -10,7 +10,9 @@
       <div class="ui raised card chatbox">
         <div class="content">
           <div class="header">Chat Room</div><br>
-          <%= render @messages %>
+          <div class="description" id="messages">
+            <%= render @messages %>
+          </div>
         </div>
         <div class="extra content">
           <div class="ui action input" style="width: 100%;">

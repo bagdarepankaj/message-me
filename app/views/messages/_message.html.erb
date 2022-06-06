@@ -1,14 +1,14 @@
-<div class="description">
+<!-- <div class="description"> -->
   <div class="ui feed">
     <div class="event">
       <div class="content">
-        <div class="summary" id="messages">
+        <div class="summary">
           <!-- <em>Elliot User:</em> text message -->
           <div class="message">
-            <%= message.text %>
-          </div><br>          
+            <em><%= message.try(:user).try(:full_name) %>:  </em><%= message.text %>
+          </div><br>
         </div>
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
