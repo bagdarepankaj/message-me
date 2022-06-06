@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if !logged_in?
-      redirect_to login_path, notice: 'You must login first'
+      redirect_to login_path, notice: 'You must login first to access the page'
     end
   end
 end
