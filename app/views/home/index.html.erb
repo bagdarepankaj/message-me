@@ -1,5 +1,4 @@
-<!-- <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p> -->
+<p id="notice"><%= notice %></p>
 <h1 class="ui center aligned icon header">
   <i class="circular icon users"></i>
   Message Me
@@ -11,18 +10,7 @@
       <div class="ui raised card chatbox">
         <div class="content">
           <div class="header">Chat Room</div><br>
-          <div class="description">
-            <div class="ui feed">
-              <div class="event">
-                <div class="content">
-                  <div class="summary" id="messages">
-                    <!-- <em>Elliot User:</em> text message -->
-                    <%= render @messages %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render @messages %>
         </div>
         <div class="extra content">
           <div class="ui action input" style="width: 100%;">
