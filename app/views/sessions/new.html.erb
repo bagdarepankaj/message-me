@@ -1,12 +1,10 @@
 <%= render 'layouts/flash_messages' %>
 
-<% if current_user %>
-  <h2 id="notice" class='ui centered aligned header'>User is already logged in </h2>
-<% else %>
 <h1 class='ui centered aligned header'>Login</h1>
 
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed stackable grid">
+
     <div class="column">
       <%= form_with url: login_path, html: {class: 'ui form'}, method: :post do |form| %>
         <div class="field">
@@ -30,12 +28,14 @@
         </div>
       <% end %>
     </div>
+
     <div class="middle aligned column">
       <div class="ui big button">
         <i class="signup icon"></i>
-        Sign Up
+        <%= link_to 'Sign Up', new_user_url %>
       </div>
     </div>
+
   </div>
 
   <div class="ui vertical divider">
@@ -43,4 +43,3 @@
   </div>
 
 </div>
-<% end %>

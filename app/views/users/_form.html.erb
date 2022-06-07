@@ -1,4 +1,4 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_with(model: user, local: true, html: {class: 'ui form'}) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,32 +13,25 @@
 
   <div class="field">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name, placeholder: 'First Name' %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, placeholder: 'Last Name' %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= form.email_field :email, placeholder: 'Email' %>
   </div>
 
-  <% if params[:action] == 'new' %>
-    <div class="field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
-    </div>
-
-    <div class="field">
-      <%= form.label :password_digest %>
-      <%= form.password_field :password_digest %>
-    </div>
-  <% end %>
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'ui primary button' %>
   </div>
 <% end %>

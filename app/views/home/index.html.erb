@@ -9,8 +9,8 @@
     <div class="twelve wide column">
       <div class="ui raised card chatbox">
         <div class="content">
-          <div class="header">Chat Room</div><br>
-          <div class="description" id="messages">
+          <div class="header">Chat Room</div>
+          <div class="ui large relaxed list" id="messages">
             <%= render @messages %>
           </div>
         </div>
@@ -25,15 +25,14 @@
       </div>
     </div>
     <div class="four wide column">
-
       <div class="ui raised card chatbox">
         <div class="content">
-          <div class="header">Online Users</div>
+          <div class="header">Users</div>
+          <div class="ui large relaxed middle aligned list" id="messages">
+            <%= render @users %>
+          </div>
         </div>
-        <!-- <div class="content">
-        </div> -->
       </div>
-
     </div>
   </div>
 </div>
