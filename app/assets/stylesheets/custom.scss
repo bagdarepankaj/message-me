@@ -2,5 +2,14 @@
 
 .ui.card.chatbox {
   width: 100%;
-  min-height: 350px;
+}
+.ui.segment { // Parent of messages
+  overflow: hidden;
+}
+#messages { // Child of segment
+  height: 350px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  width: 100%;
+  padding-right: 25px;
 }
