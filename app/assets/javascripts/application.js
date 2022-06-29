@@ -22,4 +22,7 @@ $(document).on('turbolinks:load', function(){
   $('.message .close').on('click', function() {
     $(this).closest('.message').transition('fade');
   });
+
+  // Scroll down to last message of the chat
+  $('#message-container').scrollTop($('#messages').height());
 })

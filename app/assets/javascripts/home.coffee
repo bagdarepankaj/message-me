@@ -18,7 +18,7 @@ $(document).on 'keypress', '[data-behavior~=chat_room_speaker]', (event) ->
     event.preventDefault()
 
 $(document).on 'click', '.button.submit', (event) ->
-    value = event.target.previousElementSibling.value
-    messageCreate(value)
-    event.target.previousElementSibling.value = ''
+    element = $('[data-behavior~=chat_room_speaker]')[0]
+    messageCreate(element.value)
+    element.value = ''
     event.preventDefault()

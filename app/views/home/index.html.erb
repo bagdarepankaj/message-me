@@ -10,8 +10,10 @@
       <div class="ui raised card chatbox">
         <div class="ui content segment">
           <div class="header">Chat Room</div>
-          <div class="ui large relaxed list" id="messages">
-            <%= render @messages %>
+          <div id="message-container">
+            <div class="ui large relaxed list" id="messages">
+              <%= render @messages %>
+            </div>
           </div>
         </div>
         <div class="extra content">
