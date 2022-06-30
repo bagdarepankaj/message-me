@@ -1,15 +1,15 @@
 <%= render 'layouts/flash_messages' %>
-<h1 class="ui center aligned icon header">
-  <i class="circular icon users"></i>
-  Message Me
-</h1>
 
-<div class="ui two column grid">
+<div class="ui one column grid">
   <div class="row">
-    <div class="twelve wide column">
+    <div class="sixteen wide column">
       <div class="ui raised card chatbox">
         <div class="ui content segment">
-          <div class="header">Chat Room</div>
+          <h2 class="ui center aligned icon header">
+            <i class="circular icon users"></i>
+            Message Me
+          </h2>
+          <!-- <div class="header">Chat Room</div> -->
           <div id="message-container">
             <div class="ui large relaxed list" id="messages">
               <%= render @messages %>
@@ -26,15 +26,15 @@
         </div>
       </div>
     </div>
-    <div class="four wide column">
+    <!-- <div class="four wide column">
       <div class="ui raised card chatbox">
         <div class="content">
           <div class="header">Users</div>
           <div class="ui large relaxed middle aligned list" id="users">
-            <%= render @users %>
+            <%#= render @users %>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
