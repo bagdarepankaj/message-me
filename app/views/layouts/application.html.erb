@@ -14,13 +14,13 @@
     <%= render partial: 'layouts/navigation' %>
     <div class="grids-mr-25">
       <div class="ui three column grid">
-        <div class="one wide column">
+        <div class="two wide column">
         </div>
-        <div class="twelve wide column">
+        <div class="eleven wide column">
           <%= yield %>
         </div>
         <div class="three wide column">
-          <%= render 'layouts/sidebar_users' if params[:controller] == "home" %>
+          <%= render template: 'private/conversations/index' if params[:controller] == "home" %>
         </div>
       </div>
     </div>

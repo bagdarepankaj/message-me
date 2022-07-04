@@ -1,0 +1,35 @@
+<div class="sixteen wide column">
+  <div class="ui raised card chatbox">
+    <div class="ui content segment">
+      <h3 class="ui center aligned icon header">
+        <!-- <i class="circular icon users"></i> -->
+        <i class="circular user icon"></i>
+        <%= @recipient == current_user ? @conversation.sender.full_name : @recipient.full_name %>
+      </h3>
+      <!-- <div class="header">Chat Room</div> -->
+      <div id="message-container">
+        <div class="ui large relaxed list" id="messages">
+          <%= render @messages if @messages.present? %>
+        </div>
+      </div>
+    </div>
+    <div class="extra content">
+      <%= form_for @conversation, url: private_conversations_path, remote: true, method: :post do |f| %>
+        <%= f.hidden_field :sender_id, value: @conversation.sender_id %>
+        <%= f.hidden_field :recipient_id, value: @conversation.recipient_id %>
+
+        <div class="ui fluid icon input" style="width: 100%;">
+          <%= f.fields_for :messages, @conversation.messages.build do |message| %>
+            <%= message.text_field :body %>
+            <%= message.hidden_field :user_id, value: current_user.id %>
+          <% end %>
+
+          <%= f.button :submit, class: 'ui icon button submit' do %>
+            <i class="chevron circle right icon"></i>
+          <% end %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="ui card">
+  <div class="content">
+    <div class="header">Users</div>
+    <div class="ui large relaxed middle aligned list" id="users">
+      <% all_users.each do |user| %>
+        <div class="item">
+          <!-- <img class="ui avatar image" src="/images/avatar/small/daniel.jpg"> -->
+          <div class="content">
+            <%= link_to user.full_name, new_private_conversation_path(recipient_id: user.id), remote: true, class: 'header' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
