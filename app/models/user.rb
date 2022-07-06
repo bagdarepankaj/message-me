@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  scope :all_except, -> (user) { where.not(id: user.id) }
+
   def full_name
     "#{self.first_name.try(:capitalize)} #{self.last_name.try(:capitalize)}"
   end

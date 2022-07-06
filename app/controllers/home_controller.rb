@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @messages = Message.all
-    @users = User.all
+    @users = User.all_except(current_user)
   end
 
 end
