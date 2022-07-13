@@ -20,11 +20,11 @@
 
         <div class="ui fluid icon input" style="width: 100%;">
           <%= f.fields_for :messages, @conversation.messages.build do |message| %>
-            <%= message.text_field :body %>
+            <%= message.text_field :body, class: 'msg-body' %>
             <%= message.hidden_field :user_id, value: current_user.id %>
           <% end %>
 
-          <%= f.button :submit, class: 'ui icon button submit' do %>
+          <%= f.button :submit, class: 'ui icon button' do %>
             <i class="chevron circle right icon"></i>
           <% end %>
         </div>

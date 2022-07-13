@@ -15,7 +15,7 @@ class Private::ConversationsController < ApplicationController
     sender_id = params[:private_conversation][:sender_id]
     @conversation = get_conversation(sender_id, recipient_id)
     @conversation.update(permited_params)
-    @messages = @conversation.messages
+    MessageBroadcastJob.perform_later(@conversation)
     respond_to do |format|
       format.js {}
     end
@@ -30,5 +30,4 @@ class Private::ConversationsController < ApplicationController
     def permited_params
       params.require(:private_conversation).permit(:sender_id, :recipient_id, messages_attributes: [:body, :user_id])
     end
-
 end
