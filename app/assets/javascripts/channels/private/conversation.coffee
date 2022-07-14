@@ -7,7 +7,7 @@ App.private_conversation = App.cable.subscriptions.create "Private::Conversation
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    $('#messages').append data['message']
+    $('#personal-messages').append data['message']
     $('.msg-body').val('')
 
   speak: (message) ->
