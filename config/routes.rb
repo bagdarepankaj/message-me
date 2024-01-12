@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # mount ActionCable.server => '/cable'
+  mount ActionCable.server => '/cable'
   resources :users
   get 'home', to: 'home#index'
   # get 'login', to: 'sessions#new'
