@@ -85,4 +85,4 @@ production:
   <<: *default
   database: message-me_production
   username: postgres
-  password: <%= ENV['MESSAGE-ME_DATABASE_PASSWORD'] || postgres %>
+  password: <%= ENV['MESSAGE-ME_DATABASE_PASSWORD'] || 'postgres' %>
